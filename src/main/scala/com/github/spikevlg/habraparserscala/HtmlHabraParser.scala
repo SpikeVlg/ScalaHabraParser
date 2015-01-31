@@ -1,11 +1,8 @@
 package com.github.spikevlg.habraparserscala
 
 import javax.xml.xpath.{XPathConstants, XPathFactory}
-
 import org.htmlcleaner.{CleanerProperties, DomSerializer, HtmlCleaner}
-
 import org.w3c.dom.{NodeList, Document}
-
 import scala.collection.mutable
 
 
@@ -26,7 +23,7 @@ class HtmlHabraParser {
     val doc = domSerializer.createDOM(tagNode)
 
     val scoreStr = xpath.evaluate("//span[@class='score']/text()", doc)
-    print("=======" + xpath.evaluate("//h1//span[@class='post_title']/text()", doc))
+
     HabraItem(
         id = postId
         , title = xpath.evaluate("//h1//span[@class='post_title']/text()", doc)
